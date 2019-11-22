@@ -1,0 +1,28 @@
+//计算二进制1数量
+int func （ x ）  ////15
+{
+	int countx = 0;
+	while (x)
+	{
+		countx++;
+		x = x & (x - 1);//////1111
+	}					//////1110
+						////1101。。。
+	return countx;
+}
+int main()
+{
+	int m;
+	while (cin >> m)
+	{
+		int n = 0;
+		while (m > 0)
+		{
+			n += (m & 1);
+			m >>= 1;
+		}
+		cout << n << endl;
+	}
+
+	return 0;
+}
